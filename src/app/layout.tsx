@@ -1,14 +1,13 @@
-// "use client";
+// Server Component
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import HeaderNav from "../components/HeaderNav";
-// import Footer from "../components/Footer";
-// import { Button } from "nwright-design";
-// import { Button, Footer, Header } from "nwright-design";
-import { Button, Footer, Header } from "@noahwright/design"
+// Import client component wrappers instead of direct components
+import { ButtonWrapper, FooterWrapper, HeaderWrapper } from "../components/ClientComponentWrapper";
+import { EmotionCacheProvider } from "@/lib/emotion-cache";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,10 +19,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Noah Wright -- Software Engineer / Manager",
-//   description: "Noah's developer portfolio, bio, and resume.",
-// };
+export const metadata: Metadata = {
+  title: "Noah Wright -- Software Engineer / Manager",
+  description: "Noah's developer portfolio, bio, and resume.",
+};
 
 export default function RootLayout({
   children,
@@ -35,19 +34,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="min-h-screen flex flex-col">
-          {/* <HeaderNav /> */}
-          {/* <Header
-            navItems={[
-              { label: "Home", href: "/" },
-              { label: "About", href: "/about" },
-            ]}
-          /> */}
-          {/* <Button>Button test</Button> */}
-          {/* <Button>Another Button</Button> */}
-          <main className="flex-grow pt-16">{children}</main>
-          {/* <Footer /> */}
-        </div>
+        <EmotionCacheProvider>
+          <div className="min-h-screen flex flex-col">
+            {/* <HeaderNav /> */}
+            <HeaderWrapper
+              navItems={[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Projects", href: "/projects" },
+                { label: "Principles", href: "/principles" },
+                { label: "Contact", href: "/contact" },
+              ]}
+            />
+            <ButtonWrapper>Button test</ButtonWrapper>
+            <ButtonWrapper>Another Button</ButtonWrapper>
+            <main className="flex-grow pt-16">{children}</main>
+            <FooterWrapper />
+          </div>
+        </EmotionCacheProvider>
       </body>
     </html>
   );

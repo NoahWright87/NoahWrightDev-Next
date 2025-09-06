@@ -10,7 +10,8 @@ export default function Home() {
           <p className="text-lg">I am Noah Wright, a Software Engineer and Manager.</p>
         </div>
         <div className="w-32 h-32 rounded-full overflow-hidden">
-          <Image src="/path/to/your/portrait.jpg" alt="Noah Wright" width={128} height={128} />
+          TODO: Add portrait
+          {/* <Image src="/path/to/your/portrait.jpg" alt="Noah Wright" width={128} height={128} /> */}
         </div>
       </div>
       <h1 className="text-2xl font-bold mb-4">Home</h1>
