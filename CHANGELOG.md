@@ -17,4 +17,9 @@ This file documents planned and completed changes for the repository.
 ## Version history
 
 ### v0.1.0 — Initial commit
-- TODO: write summary
+- Initial scaffold for a minimal developer site:
+  - Add Next.js (App Router) scaffold consuming `@noahwright/design` components.
+  - Implement typed theming pipeline: `theme.ts` → `scripts/build-theme.ts` → `public/theme.css`.
+  - Include minimal `app/layout.tsx`, `app/page.tsx`, and build scripts; preserve existing `AGENTS.md`.
+  - Add package manifest and scripts (`dev`, `build`, `start`, `build:theme`).
+  - Verified build and generated `public/theme.css`.
