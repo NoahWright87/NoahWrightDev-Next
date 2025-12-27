@@ -10,9 +10,12 @@ This file documents planned and completed changes for the repository.
   - Purpose is to SUMMARIZE.  Git history will give plenty of finer detail.
 
 ## WIP
-
 ### vX.X.X
-- *Keep a running list of changes as you go.*
+- Scaffolded minimal Next.js dev site; added manifests and app scaffold.
+- Implemented typed theming pipeline (`theme.ts` → `scripts/build-theme.ts` → `public/theme.css`) and generated CSS.
+- Switched to `@noahwright/design`, installed dependencies, and verified ESM-only usage.
+- Added `about`, `contact`, and `projects` pages and navigation links on the home page.
+- Verified build and served a production preview at `http://localhost:3000`; preserved `AGENTS.md`.
 
 ## Version history
 

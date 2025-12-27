@@ -39,6 +39,9 @@ npm run build
 
 - Provide copyable commands in fenced code blocks and specify the shell when relevant.
 
+- Git & commits: Do not commit, stage, push, or suggest committing changes.  
+  All git operations are reserved for the human; await explicit instruction before performing any VCS actions.
+
 ## Testing and verification
 - When you change code, run the smallest reasonable verification (typecheck, build, or focused tests).
 - Share the exact commands run and the salient output (errors or success). Keep large logs trimmed to what matters.
